@@ -1,1 +1,12 @@
-<p>container works!</p>
+<div nz-row>
+  <div nz-col nzFlex="auto"></div>
+  <div nz-col nzFlex="100px">
+    <button nz-button nzType="primary" (click)="openModal(null)">Novo</button>
+  </div>
+</div>
+<nz-divider></nz-divider>
+<div nz-row>
+  <div nz-col [nzSpan]="24">
+    <app-list-container (openModal)="openModal($event)"></app-list-container>
+  </div>
+</div>

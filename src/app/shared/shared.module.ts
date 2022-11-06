@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { NzAffixModule } from 'ng-zorro-antd/affix';
 import { NzAlertModule } from 'ng-zorro-antd/alert';
@@ -68,8 +69,8 @@ import { NzTypographyModule } from 'ng-zorro-antd/typography';
 import { NzUploadModule } from 'ng-zorro-antd/upload';
 import { NzResizableModule } from 'ng-zorro-antd/resizable';
 import { NzPipesModule } from 'ng-zorro-antd/pipes';
-import { NzCodeEditorModule } from 'ng-zorro-antd/code-editor';
-import { NzGraphModule } from 'ng-zorro-antd/graph';
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 
 
@@ -144,8 +145,8 @@ import { NzGraphModule } from 'ng-zorro-antd/graph';
     NzWaveModule,
     NzResizableModule,
     NzPipesModule,
-    NzCodeEditorModule,
-    NzGraphModule
+    HttpClientModule,
+    ReactiveFormsModule
   ]
 })
 export class SharedModule { }

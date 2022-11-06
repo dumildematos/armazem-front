@@ -1,1 +1,23 @@
-<p>list works!</p>
+<nz-table #sortTable [nzData]="listOfData" nzTableLayout="fixed">
+  <thead>
+    <tr>
+      <th *ngFor="let column of listOfColumn" [nzSortFn]="column.compare" [nzSortPriority]="column.priority">
+        {{ column.title }}
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let data of sortTable.data">
+      <td>{{ data.ncontainer }}</td>
+      <td>{{ data.cliente }}</td>
+      <td>{{ data.tipo }}</td>
+      <td>{{ data.status }}</td>
+      <td>{{ data.categoria }}</td>
+      <td>
+        <button nz-button nzType="default" (click)="editar(data)" ><span nz-icon nzType="edit"></span></button>
+        <nz-divider nzType="vertical"></nz-divider>
+        <button nz-button nzType="default" nzDanger (click)="delete(data)"><span nz-icon nzType="delete"></span></button>
+      </td>
+    </tr>
+  </tbody>
+</nz-table>
