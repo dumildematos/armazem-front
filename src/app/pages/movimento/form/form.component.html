@@ -1,1 +1,42 @@
-<p>form works!</p>
+<div>
+  <form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
+
+    <nz-form-item>
+      <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="tipo" nzRequired>Tipo</nz-form-label>
+      <nz-form-control
+        [nzSm]="14"
+        [nzXs]="24"
+        nzErrorTip="Please input not valid!"
+      >
+        <nz-select formControlName="tipo">
+          <nz-option nzLabel="Embarque" nzValue="Embarque"></nz-option>
+          <nz-option nzLabel="Descarga" nzValue="Descarga"></nz-option>
+          <nz-option nzLabel="Gate in" nzValue="Gate in"></nz-option>
+          <nz-option nzLabel="Gate out" nzValue="Gate out"></nz-option>
+          <nz-option nzLabel="Reposicionamento" nzValue="Reposicionamento"></nz-option>
+          <nz-option nzLabel="Pesagem" nzValue="Pesagem"></nz-option>
+          <nz-option nzLabel="Scanner" nzValue="Scanner"></nz-option>
+        </nz-select>
+      </nz-form-control>
+    </nz-form-item>    
+  
+    <nz-form-item>
+      <nz-form-label [nzSm]="8" [nzXs]="24" nzRequired>Data de Início</nz-form-label>
+      <nz-form-control [nzSm]="14" [nzXs]="24">
+        <nz-date-picker nzShowTime formControlName="dtInicio"></nz-date-picker>
+      </nz-form-control>
+    </nz-form-item>
+
+    <nz-form-item>
+      <nz-form-label [nzSm]="8" [nzXs]="24" nzRequired>Data de Fim</nz-form-label>
+      <nz-form-control [nzSm]="14" [nzXs]="24">
+        <nz-date-picker nzShowTime formControlName="dtFim"></nz-date-picker>
+      </nz-form-control>
+    </nz-form-item>
+
+  </form>
+</div>
+<div *nzModalFooter>
+  <button nz-button nzType="default" (click)="destroyModal()">Custom Callback</button>
+  <button nz-button nzType="primary" (click)="submitForm()">Custom Submit</button>
+</div>
